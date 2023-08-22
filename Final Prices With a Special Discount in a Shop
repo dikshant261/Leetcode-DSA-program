@@ -1,0 +1,21 @@
+/**
+ * @param {number[]} prices
+ * @return {number[]}
+ */
+var finalPrices = function(arr) {
+    let j;
+
+    for (let i = 0; i < arr.length; i++) {
+        j=i+1;
+      while(j<arr.length){
+        if (arr[i] >= arr[j]) {
+            arr[i] = arr[i] - arr[j];
+            break;
+        }
+        j++;
+    }
+        
+
+    }
+    return arr;
+};
