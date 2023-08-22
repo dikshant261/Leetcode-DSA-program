@@ -1,1 +1,30 @@
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(num) {
+        const value=num;
+    let result = 0, j, count = 0;
+    const rem = [];
+    if(num<0){
+        return false
+    }
+   while (num > 0) {
+        rem[rem.length] = num % 10;
+        num = parseInt(num / 10);
 
+    }
+    j = rem.length - 1;
+    for (let i = 0; i < rem.length; i++) {
+            if (rem[i] === rem[j]) {
+            count++;
+        }
+        j--;
+    }
+    if (count === rem.length) {
+        return true;
+    }
+    else {
+        return false;
+    }
+};
