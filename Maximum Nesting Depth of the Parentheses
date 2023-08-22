@@ -1,0 +1,22 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var maxDepth = function(str) {
+     let stac = [];
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === '(') {
+            stac.push(str[i]);
+        }
+        else {
+            if (str[i] === ')') {
+                if (count < stac.length) {
+                    count = stac.length;
+                }
+                stac.pop();
+            }
+        }
+    }
+    return count;
+};
