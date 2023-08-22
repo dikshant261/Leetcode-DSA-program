@@ -1,0 +1,18 @@
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var fib = function(n) {
+    let numb=0;
+    numb=fibno(n);
+    
+    return numb;
+};
+function fibno(n){
+    if(n<=1){
+        return n;
+    }
+    let first=fibno(n-1);
+    let second=fibno(n-2);
+    return first+second;
+}
