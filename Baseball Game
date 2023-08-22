@@ -1,0 +1,29 @@
+/**
+ * @param {string[]} operations
+ * @return {number}
+ */
+var calPoints = function(arr) {
+const st=[];
+let result=0;
+for(let i=0;i<arr.length;i++){
+    if(arr[i]!=='C'&&arr[i]!=='D'&&arr[i]!=='+'){
+        st.push(arr[i]);
+    }
+   else if(arr[i]==='C'){
+        st.pop();
+    }
+    else if(arr[i]==='D'){
+        st[st.length]=2*st[st.length-1];
+    }
+    else if(arr[i]==='+'){
+        let a=parseInt(st[st.length-1]);
+        let b=parseInt(st[st.length-2]);
+        st[st.length]=a+b;
+    }
+  
+}
+for(let i=0;i<st.length;i++){
+    result+=parseInt(st[i]);
+}
+return result;
+};
